@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-07-12T00:12:36 IST" name="Default suite" finished-at="2025-07-12T00:12:45 IST" duration-ms="8352">
+  <suite started-at="2025-07-12T00:49:15 IST" name="Default suite" finished-at="2025-07-12T00:49:21 IST" duration-ms="6263">
     <groups>
     </groups>
-    <test started-at="2025-07-12T00:12:36 IST" name="Default test" finished-at="2025-07-12T00:12:45 IST" duration-ms="8352">
-      <class name="tutorialsNinja.register.TC_RF_005">
-        <test-method signature="verifyRegisterWithAllFields()[pri:0, instance:tutorialsNinja.register.TC_RF_005@48ae9b55]" started-at="2025-07-12T00:12:36 IST" name="verifyRegisterWithAllFields" finished-at="2025-07-12T00:12:45 IST" duration-ms="8316" status="PASS">
+    <test started-at="2025-07-12T00:49:15 IST" name="Default test" finished-at="2025-07-12T00:49:21 IST" duration-ms="6263">
+      <class name="tutorialsNinja.register.TC_RF_008">
+        <test-method signature="verifyRegisterWithAllFields()[pri:0, instance:tutorialsNinja.register.TC_RF_008@48ae9b55]" started-at="2025-07-12T00:49:15 IST" name="verifyRegisterWithAllFields" finished-at="2025-07-12T00:49:21 IST" duration-ms="6211" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyRegisterWithAllFields -->
-      </class> <!-- tutorialsNinja.register.TC_RF_005 -->
+      </class> <!-- tutorialsNinja.register.TC_RF_008 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
