@@ -9,10 +9,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TC_RF_006 {
+public class TC_RF_017 {
 
 	@Test
-	public void verifyNoOptionIsSelectedOnNewsLetter() throws InterruptedException
+	public void verifyRegisterWithMandatoryFields() throws InterruptedException
 	{
 	WebDriver driver=new ChromeDriver();
 	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -21,29 +21,25 @@ public class TC_RF_006 {
 	
 	driver.findElement(By.xpath("//span[text()='My Account']")).click();
 	driver.findElement(By.linkText("Register")).click();
+	
 	driver.findElement(By.id("input-firstname")).sendKeys("Sumit");
 	driver.findElement(By.id("input-lastname")).sendKeys("rane");
 	driver.findElement(By.id("input-email")).sendKeys(generateNewEmail());
 	driver.findElement(By.id("input-telephone")).sendKeys("234354657");
 	driver.findElement(By.id("input-password")).sendKeys("RaneSumit123");
 	driver.findElement(By.id("input-confirm")).sendKeys("RaneSumit123");
-	driver.findElement(By.xpath("//label[@class='radio-inline']//input[@value='0']")).click();
-	driver.findElement(By.name("agree")).click();
 	driver.findElement(By.xpath("//input[@value='Continue']")).click();
 	
-	Thread.sleep(3000);
-	driver.findElement(By.linkText("Continue")).click();
-	driver.findElement(By.linkText("Subscribe / unsubscribe to newsletter")).click();
-	
-	Assert.assertTrue(driver.findElement(By.xpath("//ul[@class='breadcrumb']//a[text()='Newsletter']")).isDisplayed());
-	Assert.assertTrue(driver.findElement(By.xpath("//label[@class='radio-inline']//input[@name='newsletter' and  @value='0']")).isSelected());
+	String expectedWarningMsg = "Warning: You must agree to the Privacy Policy!";
+	String actualWarningMsg=driver.findElement(By.xpath("//div[@class='alert alert-danger alert-dismissible']")).getText();
+	Assert.assertEquals(actualWarningMsg, expectedWarningMsg);
 	
 	driver.quit();
-	}
-	
+
+}	
 	public static String generateNewEmail()
 	{
 		return new Date().toString().replaceAll(" ", "").replaceAll(":", "")+"@gmail.com";
+		
 	}
-	
 }

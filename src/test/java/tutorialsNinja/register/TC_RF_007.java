@@ -12,7 +12,7 @@ public class TC_RF_007 {
 
 
 	@Test
-	public void verifyRegisterWithAllFields() throws InterruptedException
+	public void verifyDifferentWaysToRegisterAccount() throws InterruptedException
 	{
 	WebDriver driver=new ChromeDriver();
 	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));

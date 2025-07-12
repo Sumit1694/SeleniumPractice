@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 public class TC_RF_005 {
 
 	@Test
-	public void verifyRegisterWithAllFields() throws InterruptedException
+	public void verifyYesOptionIsSelectedOnNewsLetter() throws InterruptedException
 	{
 	WebDriver driver=new ChromeDriver();
 	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));

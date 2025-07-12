@@ -9,10 +9,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TC_RF_008 {
+public class TC_RF_009 {
 
     @Test
-    public void verifyPasswordMismatchErrorMsg() throws InterruptedException {
+    public void verifyRegisterWithExistingEmailAddress() throws InterruptedException {
         WebDriver driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().window().maximize();
@@ -22,7 +22,7 @@ public class TC_RF_008 {
         driver.findElement(By.linkText("Register")).click();
         driver.findElement(By.id("input-firstname")).sendKeys("Sumit");
         driver.findElement(By.id("input-lastname")).sendKeys("rane");
-        driver.findElement(By.id("input-email")).sendKeys(generateNewEmail());
+        driver.findElement(By.id("input-email")).sendKeys("Sumitrane19888@gmail.com");
         driver.findElement(By.id("input-telephone")).sendKeys("234354657");
         driver.findElement(By.id("input-password")).sendKeys("RaneSumit123");
         driver.findElement(By.id("input-confirm")).sendKeys("RaneSumit1235"); // intentionally mismatched
@@ -33,8 +33,8 @@ public class TC_RF_008 {
         Thread.sleep(1000); // for visibility; can be avoided if wait is implemented
         
         // Capture and verify error message
-        String expectedErrorText = "Password confirmation does not match password!";
-        String actualErrorText = driver.findElement(By.xpath("//div[@class='col-sm-10']//div[@class='text-danger']")).getText();
+        String expectedErrorText = "Warning: E-Mail Address is already registered!";
+        String actualErrorText = driver.findElement(By.xpath("//div[@class='alert alert-danger alert-dismissible']")).getText();
         Assert.assertEquals(actualErrorText, expectedErrorText);
         
         driver.quit();

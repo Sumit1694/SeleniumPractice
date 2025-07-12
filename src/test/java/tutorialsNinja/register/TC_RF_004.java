@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 public class TC_RF_004 {
 	@Test
-	public void verifyRegisterWithAllFields() throws InterruptedException
+	public void verifyProperNotificationErrorMessages() throws InterruptedException
 	{
 	WebDriver driver=new ChromeDriver();
 	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
